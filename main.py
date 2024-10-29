@@ -6,9 +6,15 @@ QUESTION_NUMBER = 4
 
 def question():
     a, b = random.randint(MIN_NUMBER, MAX_NUMBER), random.randint(MIN_NUMBER, MAX_NUMBER)
+    o = random.randint(0, 1)
+    _operator = "+"
+    if o == 1:
+        _operator = "*"
     _som = a + b
-    calculate = input(f"Calcule : {a} + {b} = ")
+    calculate = input(f"Calcule : {a} {_operator} {b} = ")
     int_calculate = int(calculate)
+    if o == 1:
+        _som = a * b
     if int_calculate == _som:
         return True
     return False
